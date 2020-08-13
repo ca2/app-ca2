@@ -1,0 +1,11 @@
+{
+"wndfrm":"anthill",
+"schema":"013",
+"style":"LightBlue",
+"hide_on_close": true,
+"control_box":
+   {  
+      "transparent_button" : { "visible": false },
+      "dock_button" : { "visible": false }
+   }
+}

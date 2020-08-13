@@ -1,0 +1,9 @@
+; app_core_desk_tb.def : Declares the module parameters for the DLL.
+
+LIBRARY      "_desk_tb"
+;DESCRIPTION  '_desk_tb Windows Dynamic Link Library'
+EXPORTS
+    DllGetClassObject   PRIVATE
+    DllCanUnloadNow     PRIVATE
+    DllRegisterServer   PRIVATE
+    DllUnregisterServer PRIVATE

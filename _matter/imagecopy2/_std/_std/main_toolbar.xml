@@ -1,0 +1,5 @@
+<toolbar>
+	<button id="open_folder">Open Folder</button>
+	<separator/>
+	<button id="file_copy">Copy</button>
+</toolbar>

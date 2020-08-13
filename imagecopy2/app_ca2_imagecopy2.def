@@ -1,0 +1,8 @@
+; app_ca2_imagecopy2.def
+
+LIBRARY  "app_ca2_imagecopy2"
+; For Win32 DLLs, only EXPORTs really required.
+
+EXPORTS
+app_ca2_imagecopy2_get_new_library
+

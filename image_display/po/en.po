@@ -1,0 +1,104 @@
+msgid "IDS_DESCRIPTION1"
+msgstr "This utility will update the firmware on your Q-Rainbow Linear Lamp. You can automatically download the software here or from our website at www.QuasarScience.com/support\n\nAfter downloading the file automatically or choosing the file locally, please plug in your USB Upgrade Cable. Your system will automatically download the required drivers."
+
+msgid "Back"
+msgstr "Back"
+
+msgid "Close"
+msgstr "Close"
+
+msgid "Cancel"
+msgstr "Cancel"
+
+msgid "Update"
+msgstr "Update"
+
+msgid "Error."
+msgstr "Error."
+
+msgid "Failed"
+msgstr "Failed"
+
+msgid "Version: "
+msgstr "Version: "
+
+msgid "Installing: "
+msgstr "Installing: "
+
+msgid "Device not detected."
+msgstr "Device not detected."
+
+msgid "Failed. Could not open connection."
+msgstr "Failed. Could not open connection."
+
+msgid "Upload Error."
+msgstr "Upload Error."
+
+msgid "Failed. File Transfer error."
+msgstr "Failed. File Transfer error."
+
+
+msgid "File name or size incorrect."
+msgstr "File name or size incorrect."
+
+msgid "Upload Success."
+msgstr "Upload Success."
+
+msgid "Upload progress 100%."
+msgstr "Upload progress 100%."
+
+msgid "Activating."
+msgstr "Activating."
+
+msgid "Activating update."
+msgstr "Activating update."
+
+msgid "Success"
+msgstr "Success"
+
+msgid "Device update completed succesfully!"
+msgstr "Device update completed succesfully!"
+
+msgid "Protocol Error"
+msgstr "Protocol Error"
+
+msgid "Failed to update device."
+msgstr "Failed to update device."
+
+msgid "Serial Error."
+msgstr "Serial Error."
+
+msgid "IO Error"
+msgstr "IO Error"
+
+msgid "Connection Failed."
+msgstr "Connection Failed."
+
+msgid "File Transfer error."
+msgstr "File Transfer error."
+
+msgid "Verifying Connection"
+msgstr "Verifying Connection"
+
+msgid "Uploading Firmware"
+msgstr "Uploading Firmware"
+
+msgid "File name/size error."
+msgstr "File name/size error."
+
+msgid "Finalizing..."
+msgstr "Finalizing..."
+
+msgid "Success!"
+msgstr "Success!"
+
+msgid "User cancelled."
+msgstr "User cancelled."
+
+msgid "Install Version "
+msgstr "Install Version "
+
+msgid "Could not change Language"
+msgstr "Could not change Language"
+
+

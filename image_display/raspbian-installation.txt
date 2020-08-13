@@ -1,0 +1,14 @@
+﻿1.  Flash Raspian Stretch on SD card with Etcher
+2.  sudo apt-get update
+3.  sudo apt-get upgrade
+4.  sudo reboot
+5.  *sudo apt-get update *(new item)
+6.  sudo apt-get upgrade
+7.  sudo reboot
+8.  touch .quasar_science_desktop file in /home/pi
+9.  run install.sh
+10. sudo reboot
+11. run install.sh again
+12. sudo reboot
+13. run init.sh
+14. sudo reboot

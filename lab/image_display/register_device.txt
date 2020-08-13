@@ -1,0 +1,1 @@
+https://workstation.mywindowdressings.com/projector_dots_pi-ip-log/register_device.php?id=$id&address=$address

@@ -1,0 +1,10 @@
+<toolbar>
+	<button id="task_add">Add Task</button>
+	<button id="task_delete">Delete Task</button>
+	<separator/>
+	<button id="file_import">Import</button>
+	<button id="file_export">Export</button>
+	<separator/>
+	<button id="task_start_all">Start All Tasks</button>
+	<button id="task_stop_all">Stop All Tasks</button>
+</toolbar>

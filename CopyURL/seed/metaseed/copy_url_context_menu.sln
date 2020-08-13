@@ -1,0 +1,67 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "_copy_url_context_menu", "..\..\appseed\copy_url_context_menu\copy_url_context_menu.vcxproj", "{19518477-1511-2204-0204-5872E30F2300}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		basis|x64 = basis|x64
+		basis|x86 = basis|x86
+		cover|x64 = cover|x64
+		cover|x86 = cover|x86
+		small|x64 = small|x64
+		small|x86 = small|x86
+		stage|x64 = stage|x64
+		stage|x86 = stage|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19518477-1511-2204-0204-5872E30F2300}.basis|x64.ActiveCfg = basis|x64
+		{19518477-1511-2204-0204-5872E30F2300}.basis|x64.Build.0 = basis|x64
+		{19518477-1511-2204-0204-5872E30F2300}.basis|x86.ActiveCfg = basis|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.basis|x86.Build.0 = basis|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.cover|x64.ActiveCfg = cover|x64
+		{19518477-1511-2204-0204-5872E30F2300}.cover|x64.Build.0 = cover|x64
+		{19518477-1511-2204-0204-5872E30F2300}.cover|x86.ActiveCfg = cover|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.cover|x86.Build.0 = cover|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.small|x64.ActiveCfg = stage|x64
+		{19518477-1511-2204-0204-5872E30F2300}.small|x64.Build.0 = stage|x64
+		{19518477-1511-2204-0204-5872E30F2300}.small|x86.ActiveCfg = stage|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.small|x86.Build.0 = stage|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.stage|x64.ActiveCfg = stage|x64
+		{19518477-1511-2204-0204-5872E30F2300}.stage|x64.Build.0 = stage|x64
+		{19518477-1511-2204-0204-5872E30F2300}.stage|x86.ActiveCfg = stage|Win32
+		{19518477-1511-2204-0204-5872E30F2300}.stage|x86.Build.0 = stage|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7B0DDBB4-15A7-4406-9A77-701A91DF487E}
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+	GlobalSection(Performance) = preSolution
+		HasPerformanceSessions = true
+	EndGlobalSection
+EndGlobal

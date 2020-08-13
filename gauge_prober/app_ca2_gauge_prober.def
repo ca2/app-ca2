@@ -1,0 +1,8 @@
+; app_ca2_gauge_prober.def
+
+LIBRARY  "app_ca2_gauge_prober"
+; For Win32 DLLs, only EXPORTs really required.
+
+EXPORTS
+app_ca2_gauge_prober_get_new_library
+

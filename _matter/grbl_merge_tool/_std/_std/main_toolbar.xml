@@ -1,0 +1,11 @@
+<toolbar>
+	<button id="file_open_file">Open File</button>
+	<button id="file_open_library">Open Library</button>
+	<separator/>
+	<button id="file_start">Start</button>
+	<button id="file_stop">Stop</button>
+	<separator/>
+	<button id="file_reset">Reset</button>
+	<separator/>
+	<button id="file_barcode">Barcode</button>
+</toolbar>

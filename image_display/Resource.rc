@@ -1,0 +1,331 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#ifndef APSTUDIO_INVOKED
+#include "targetver.h"
+#endif
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (United States) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDC_WINDOWSPROJECT2 MENU
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "E&xit",                       IDM_EXIT
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About ...",                  IDM_ABOUT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDC_WINDOWSPROJECT2 ACCELERATORS
+BEGIN
+    "?",            IDM_ABOUT,              ASCII,  ALT
+    "/",            IDM_ABOUT,              ASCII,  ALT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 170, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About WindowsProject2"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "WindowsProject2, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2017",IDC_STATIC,42,26,114,8
+    DEFPUSHBUTTON   "OK",IDOK,113,41,50,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 163
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#ifndef APSTUDIO_INVOKED\r\n"
+    "#include ""targetver.h""\r\n"
+    "#endif\r\n"
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PO
+//
+
+IDPO_EN                 PO                      "po\\en.po"
+
+IDPO_BR                 PO                      "po\\br.po"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE
+BEGIN
+    IDS_APP_TITLE           "WindowsProject2"
+    IDS_DESCRIPTION1        "This utility will update the firmware on your Q-Rainbow Linear Lamp. You can automatically download the software here or from our website at www.QuasarScience.com/support\n\nAfter downloading the file automatically or choosing the file locally, please plug in your USB Upgrade Cable. Your system will automatically download the required drivers."
+    IDC_WINDOWSPROJECT2     "WINDOWSPROJECT2"
+END
+
+#endif    // English (United States) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Portuguese (Brazil) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_PTB)
+LANGUAGE LANG_PORTUGUESE, SUBLANG_PORTUGUESE_BRAZILIAN
+#pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG1 DIALOGEX 0, 0, 609, 294
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "Download Latest Version From Web:",IDC_RADIO_DOWNLOAD,
+                    "Button",BS_AUTORADIOBUTTON | WS_GROUP,246,129,227,21
+    CONTROL         "Install Version",IDC_RADIO_LATEST,"Button",BS_AUTORADIOBUTTON,246,166,227,21
+    CONTROL         "Choose File on Computer",IDC_RADIO_BROWSE,"Button",BS_AUTORADIOBUTTON,246,200,227,21
+    PUSHBUTTON      "Check Version",IDC_CHECK_VERSION,493,129,109,21
+    CTEXT           "",IDC_VERSION_STATUS,493,151,109,20
+    PUSHBUTTON      "Download",IDC_DOWNLOAD,493,172,109,21
+    CTEXT           "",IDC_DOWNLOAD_PROGRESS,493,195,109,20
+    EDITTEXT        IDC_EDIT_BROWSE,246,224,217,21,ES_AUTOHSCROLL
+    PUSHBUTTON      "Browse",IDC_BROWSE,493,224,109,21
+    RTEXT           "Welcome to the Quasar Update Utility",IDC_TITLE1,270,16,332,26
+    LTEXT           "This utility will update the firmware on your Q-Rainbow Linear Lamp. You can automatically download the software here or from our website at www.QuasarScience.com/Rainbow",IDC_DESCRIPTION,246,37,342,91
+    CONTROL         "",IDC_LOGO,"Static",SS_OWNERDRAW | WS_GROUP,38,31,187,236
+    LTEXT           "Turn off your Q-Rainbow lamp. Press and hold the Enter button andd turn the lamp on. When the red light is flashing, press Update.",IDC_STATIC3,246,254,353,33
+    COMBOBOX        IDC_COMBO_LANGUAGE,7,7,122,98,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_DIALOG2 DIALOGEX 0, 0, 609, 330
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Quasar Science Update Utility"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "Cancel",IDCANCEL,500,301,109,21
+    PUSHBUTTON      "Update",IDC_UPDATE,373,301,109,21
+    LTEXT           "0.22",IDC_VERSION,0,314,16,8,WS_DISABLED
+    PUSHBUTTON      "Update",IDC_UPDATE_APP,120,301,109,21,NOT WS_VISIBLE
+    LTEXT           "Version %s is available.",IDC_LABEL_UPDATE_APP,27,314,90,8,NOT WS_VISIBLE
+    PUSHBUTTON      "Restart",IDC_RESTART,253,301,109,21,NOT WS_VISIBLE
+END
+
+IDD_DIALOG3 DIALOGEX 0, 0, 609, 294
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    RTEXT           "0%",IDC_UPLOAD_PROGRESS,555,182,45,17
+    RTEXT           "Updating Software",IDC_TITLE1,270,24,332,37
+    LTEXT           "Turn off your Q-Rainbow lamp. Press and hold the Enter button and turn the lamp on. It will do the rest from there. The lamp will turn back on when successful.",IDC_DESCRIPTION,246,52,342,37
+    CONTROL         "",IDC_PROGRESS_CONTROL,"msctls_progress32",WS_BORDER,297,181,254,18
+    RTEXT           "",IDC_PROGRESS_STATUS,421,145,128,21
+    LTEXT           "",IDC_RESULT,249,242,306,45
+    CONTROL         "",IDC_LOGO,"Static",SS_OWNERDRAW | WS_GROUP,38,31,196,237
+    COMBOBOX        IDC_COMBO1,297,214,113,57,CBS_DROPDOWNLIST | NOT WS_VISIBLE | WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "Update",IDC_UPDATE2,442,214,109,18,NOT WS_VISIBLE
+    CONTROL         "<a>Show Log</a>",IDC_SYSLINK1,"SysLink",LWS_RIGHT | WS_TABSTOP,556,217,46,9
+    LTEXT           "Firmware Version: ",IDC_FIRMWARE_VERSION,246,102,332,28
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_DIALOG1, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 602
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
+
+    IDD_DIALOG2, DIALOG
+    BEGIN
+        BOTTOMMARGIN, 322
+    END
+
+    IDD_DIALOG3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 602
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 287
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SMALL               ICON                    "small.ico"
+
+IDI_WINDOWSPROJECT2     ICON                    "WindowsProject2.ico"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// RT_MANIFEST
+//
+
+1                       RT_MANIFEST             "_app_quasar_science_update_utility.manifest"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 0,61,0,0
+ PRODUCTVERSION 0,61,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041604b0"
+        BEGIN
+            VALUE "FileVersion", "0.61.0.0"
+            VALUE "LegalCopyright", "Copyright (C) 2017"
+            VALUE "OriginalFilename", "Quasar Science Update Utility"
+            VALUE "ProductName", "Update Utility"
+            VALUE "ProductVersion", "0.61.0.0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x416, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_LOGO                PNG                     "qslogo.png"
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// ZIP
+//
+
+IDR_ZIP_UPGRADECABLEDRIVER ZIP                     "UpgradeCableDriver.zip"
+
+#endif    // Portuguese (Brazil) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

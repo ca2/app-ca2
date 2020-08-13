@@ -1,0 +1,4 @@
+<toolbar>
+	<button id="task_add">Add Task</button>
+	<button id="task_delete">Delete Task</button>
+</toolbar>

@@ -1,0 +1,194 @@
+msgid "Back"
+msgstr ""
+
+msgid "Administration"
+msgstr ""
+
+msgid "Back to Desktop"
+msgstr ""
+
+msgid "Shutdown"
+msgstr ""
+
+msgid "Quasar Science Update Utility"
+msgstr ""
+
+msgid "Start Over"
+msgstr ""
+
+msgid "This utility will update the firmware on your Q-Rainbow Linear Lamp."
+msgstr ""
+
+msgid "Update to Latest Beta"
+msgstr ""
+
+msgid "Update"
+msgstr ""
+
+msgid "Download Latest Version From Web"
+msgstr ""
+
+msgid "Install Version"
+msgstr ""
+
+msgid "Choose Existing File on Device"
+msgstr ""
+
+msgid "Wi-Fi Network"
+msgstr ""
+
+msgid "Strength (%)"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Connecting"
+msgstr ""
+
+msgid "Connected"
+msgstr ""
+
+msgid "Wi-fi Network Passphrase"
+msgstr ""
+
+msgid "Connect"
+msgstr ""
+
+msgid "Wi-fi Credentials"
+msgstr ""
+
+msgid "Check Version"
+msgstr ""
+
+msgid "Check for Beta Download"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Download Firmware From Web"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+msgid "Safely Remove USB"
+msgstr ""
+
+msgid "Reload USB"
+msgstr ""
+
+msgid "Firmware Version: "
+msgstr ""
+
+msgid "Plug in your USB Update Cable."
+msgstr ""
+
+msgid "Install Bootloader before Firmware Update"
+msgstr ""
+
+msgid "Download Bootloader Update"
+msgstr ""
+
+#, c-format
+msgid "Firmware Version: %s"
+msgstr ""
+
+msgid ""
+"Turn off your Q-Rainbow lamp. Press and hold the Enter button and turn the "
+"lamp on."
+msgstr ""
+
+msgid "Show Log"
+msgstr ""
+
+msgid "Restart Update"
+msgstr ""
+
+msgid "Log"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "Restart"
+msgstr ""
+
+msgid "No"
+msgstr ""
+
+msgid "error"
+msgstr ""
+
+msgid ""
+"Please wait until the green light turns off\n"
+"before turning off power.\n"
+"\n"
+msgstr ""
+
+msgid "Are you sure you want to shutdown device?"
+msgstr ""
+
+msgid "Confirm 'Back to Desktop'?"
+msgstr ""
+
+msgid "Open File"
+msgstr ""
+
+msgid "Install Version "
+msgstr ""
+
+msgid "Enter Administration Password"
+msgstr ""
+
+msgid "Login"
+msgstr ""
+
+msgid "Login for Administration"
+msgstr ""
+
+msgid "Login succesfull."
+msgstr ""
+
+msgid "Wrong password."
+msgstr ""
+
+msgid "Enable return to Desktop"
+msgstr ""
+
+msgid "Enable Multi-Update"
+msgstr ""
+
+msgid "Beta Software Download"
+msgstr ""
+
+msgid "Enable Bootloader Update"
+msgstr ""
+
+msgid "Changes will take effect on restart."
+msgstr ""
+
+msgid "Administration Page"
+msgstr ""
+
+msgid "Could not change language"
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "IDS_DESCRIPTION1"
+msgstr ""
+
+msgid "Close"
+msgstr ""

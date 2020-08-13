@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_workspace_file>
+	<Workspace title="image_display">
+		<Project filename="../../../app/appseed/ace/ace.cbp" />
+		<Project filename="../../../app/appseed/aura/aura.cbp">
+			<Depends filename="../../../app/appseed/ace/ace.cbp" />
+		</Project>
+		<Project filename="../../../app/appseed/draw2d_cairo/draw2d_cairo.cbp">
+			<Depends filename="../../../app/appseed/aura/aura.cbp" />
+		</Project>
+		<Project filename="../../appseed/image_display/image_display.cbp">
+			<Depends filename="../../../app/appseed/ace/ace.cbp" />
+			<Depends filename="../../../app/appseed/aura/aura.cbp" />
+			<Depends filename="../../../app/appseed/draw2d_cairo/draw2d_cairo.cbp" />
+		</Project>
+	</Workspace>
+</CodeBlocks_workspace_file>

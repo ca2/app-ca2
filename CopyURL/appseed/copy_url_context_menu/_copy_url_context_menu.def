@@ -1,0 +1,9 @@
+; copy_url_context_menu.def : Declares the module parameters for the DLL.
+
+LIBRARY      "copy_url_context_menu"
+;DESCRIPTION  '_desk_tb Windows Dynamic Link Library'
+EXPORTS
+    DllGetClassObject   PRIVATE
+    DllCanUnloadNow     PRIVATE
+    DllRegisterServer   PRIVATE
+    DllUnregisterServer PRIVATE

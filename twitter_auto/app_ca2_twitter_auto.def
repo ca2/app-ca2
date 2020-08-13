@@ -1,0 +1,8 @@
+; app_ca2_twitter_auto.def
+
+LIBRARY  "app_ca2_twitter_auto"
+; For Win32 DLLs, only EXPORTs really required.
+
+EXPORTS
+app_ca2_twitter_auto_get_new_library
+
