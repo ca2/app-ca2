@@ -911,3 +911,17 @@ const stm8_device_t stm8_devices[] = {
     { NULL },
 };
 
+
+
+fileformat_t stm8_get_fileformat(const char * filename)
+{
+	fileformat_t fileformat = RAW_BINARY;
+
+
+	if(is_ext(filename, ".ihx") || is_ext(filename, ".hex") || is_ext(filename, ".i86"))
+		fileformat = INTEL_HEX;
+	else if(is_ext(filename, ".s19") || is_ext(filename, ".s8") || is_ext(filename, ".srec"))
+		fileformat = MOTOROLA_S_RECORD;
+
+	return fileformat;
+}
