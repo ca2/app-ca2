@@ -1,11 +1,11 @@
 #ifndef __PGM_H
 #define __PGM_H
 
-#if !defined(RASPBIAN)
+//#if defined(RASPBIAN)
  #include <libusb-1.0/libusb.h>
-#else
- #include <libusb.h>
-#endif
+//#else
+// #include <libusb.h>
+//#endif
 
 #include "stm8.h"
 #include "libespstlink.h"
