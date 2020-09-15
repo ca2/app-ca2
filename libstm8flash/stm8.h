@@ -1,6 +1,13 @@
 #ifndef __STM8_H
 #define __STM8_H
 
+
+typedef enum {
+    INTEL_HEX = 0,
+    MOTOROLA_S_RECORD,
+    RAW_BINARY
+} fileformat_t;
+
 /* This header file contains the generic information
    about supported STM8 devices */
 
@@ -30,11 +37,17 @@ typedef struct stm8_device {
 	unsigned int flash_size;
 	unsigned int flash_block_size;
 	unsigned int option_bytes_size;
-	ROP_type_t   read_out_protection_mode; 
+	ROP_type_t   read_out_protection_mode;
 	stm8_regs_t regs;
 } stm8_device_t;
 
 extern const stm8_device_t stm8_devices[];
 
+fileformat_t stm8_get_fileformat(const char * filename);
+const stm8_device_t * stm8_get_part(const char * optarg);
+void stm8_get_version(char * szMessage, int iCount);
+
 #endif
+
+
 

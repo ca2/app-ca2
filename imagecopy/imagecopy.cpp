@@ -4,7 +4,7 @@
 #define min MIN
 #define max MAX
 #include <gdiplus.h>
-#define new AURA_NEW
+#define new ACME_NEW
 
 
 #include <stdio.h>

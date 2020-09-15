@@ -20,6 +20,7 @@
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 #include <sys/param.h>
 #include <sys/stat.h>
@@ -38,8 +39,8 @@ static int espstlink_read_byte(programmer_t *pgm, unsigned int addr) {
   return byte;
 }
 
-static bool espstlink_write_byte(programmer_t *pgm, uint8_t byte,
-                                 unsigned int addr) {
+static bool espstlink_write_byte(programmer_t *pgm, uint8_t byte, unsigned int addr)
+{
   return espstlink_swim_write(pgm->espstlink, &byte, addr, 1);
 }
 
