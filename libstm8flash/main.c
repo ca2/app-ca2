@@ -105,10 +105,15 @@ int stm8_usb_init(char * szMessage, int iCount, programmer_t *pgm, int pgm_seria
 	cnt = libusb_get_device_list(ctx, &devs);
 	if(cnt < 0) return(false);
 
+   snprintf(sz, sizeof(sz), "Searching vid=%d pid=%d\n", pgm->usb_vid, pgm->usb_pid);
+   strcat(szMessage, sz);
+
 	// count available programmers
 	for(int i=0; i<cnt; i++) {
 		struct libusb_device_descriptor desc;
 		libusb_get_device_descriptor(devs[i], &desc);
+      snprintf(sz, sizeof(sz), "Device=%d vid=%d pid=%d\n", i, desc.idVendor, desc.idProduct);
+      strcat(szMessage, sz);
 		if(desc.idVendor == pgm->usb_vid && desc.idProduct == pgm->usb_pid) {
 			numOfProgrammers++;
 		}
@@ -173,19 +178,20 @@ int stm8_usb_init(char * szMessage, int iCount, programmer_t *pgm, int pgm_seria
 
 
 	pgm->ctx = ctx;
-	if (!pgm->dev_handle)
+	// assert(pgm->dev_handle);
+
+	libusb_free_device_list(devs, 1); //free the list, unref the devices in it
+
+   if (!pgm->dev_handle)
 	{
 
-      snprintf(sz, sizeof(sz), "Could not open USB device.");
+      snprintf(sz, sizeof(sz), "Could not find any programmer.");
 
       strcat(szMessage, sz);
 
       return false;
 
    }
-	// assert(pgm->dev_handle);
-
-	libusb_free_device_list(devs, 1); //free the list, unref the devices in it
 
 	 //find out if kernel driver is attached
 	if(libusb_kernel_driver_active(pgm->dev_handle, 0) == 1)
