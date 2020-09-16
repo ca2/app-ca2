@@ -549,7 +549,7 @@ int main(int argc, char **argv) {
 		fclose(f);
 
 		if(memcmp(buf, buf2, bytes_to_verify) == 0) {
-			fprintf(stderr, "OK\n");
+			fprintf(stderr, "\nOK\n");
 			fprintf(stderr, "Bytes verified: %d\n", bytes_to_verify);
 		} else {
 			fprintf(stderr, "FAILED\n");
@@ -593,7 +593,7 @@ int main(int argc, char **argv) {
 			// Restarting core (if applicable)
 			pgm->reset(pgm);
 		}
-		fprintf(stderr, "OK\n");
+		fprintf(stderr, "\nOK\n");
 		fprintf(stderr, "Bytes written: %d\n", sent);
 		fclose(f);
 	} else if (action == UNLOCK) {

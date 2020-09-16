@@ -32,7 +32,7 @@ extern int optreset;
 #define VERSION "1.2"
 #define VERSION_NOTES "DEBUG3"
 
-
+int is_ext(const char *filename, const char *ext);
 
 void print_help_and_exit(const char *name, int err);
 
@@ -71,8 +71,16 @@ void serialno_to_hex(const char *serialno, char *serialno_hex) {
 	}
 }
 
-int stm8_usb_init(char * szMessage, int iCount, programmer_t *pgm, int pgm_serialno_specified, char *pgm_serialno) {
-	if (!pgm->usb_vid && !pgm->usb_pid) return(true);
+int stm8_usb_init(char * szMessage, int iCount, programmer_t *pgm, int pgm_serialno_specified, char *pgm_serialno)
+{
+
+	if (!pgm->usb_vid && !pgm->usb_pid)
+	{
+
+      return(true);
+
+   }
+
    memset(szMessage, 0, iCount);
 	char sz[2048];
 	libusb_device **devs;
@@ -84,10 +92,14 @@ int stm8_usb_init(char * szMessage, int iCount, programmer_t *pgm, int pgm_seria
 	char serialno_hex[64];
 
 
-	int r;
-	ssize_t cnt;
-	r = libusb_init(&ctx);
-	if(r < 0) return(false);
+	int r = libusb_init(&ctx);
+
+	if(r < 0)
+	{
+
+      return(false);
+
+   }
 
 	{
 #ifdef STM8FLASH_LIBUSB_QUIET
@@ -102,83 +114,113 @@ int stm8_usb_init(char * szMessage, int iCount, programmer_t *pgm, int pgm_seria
 #endif
 	}
 
-	cnt = libusb_get_device_list(ctx, &devs);
-	if(cnt < 0) return(false);
+	int cnt = libusb_get_device_list(ctx, &devs);
 
-   snprintf(sz, sizeof(sz), "Searching vid=%d pid=%d\n", pgm->usb_vid, pgm->usb_pid);
+	if(cnt < 0)
+	{
+
+      return(false);
+
+   }
+
+   snprintf(sz, sizeof(sz), "Searching vid=%d pid=%d in %d devices\n", pgm->usb_vid, pgm->usb_pid, cnt);
    strcat(szMessage, sz);
 
 	// count available programmers
-	for(int i=0; i<cnt; i++) {
-		struct libusb_device_descriptor desc;
-		libusb_get_device_descriptor(devs[i], &desc);
-      snprintf(sz, sizeof(sz), "Device=%d vid=%d pid=%d\n", i, desc.idVendor, desc.idProduct);
-      strcat(szMessage, sz);
-		if(desc.idVendor == pgm->usb_vid && desc.idProduct == pgm->usb_pid) {
-			numOfProgrammers++;
-		}
-
-	}
-
-	if(numOfProgrammers > 1 || pgm_serialno_specified){
-
-		// no serialno given
-		if(!pgm_serialno_specified) {
-			snprintf(sz, sizeof(sz), "WARNING: More than one programmer found but no serial number given. Programmer 1 will be used:\n");
-         strcat(szMessage, sz);
-			pgm->dev_handle = libusb_open_device_with_vid_pid(ctx, pgm->usb_vid, pgm->usb_pid);
-		}
-
-		numOfProgrammers = 0;
-		int i=0;
-		for(i=0; i<cnt; i++) {
-			struct libusb_device_descriptor desc;
-			libusb_device_handle *tempHandle;
-
-			libusb_get_device_descriptor(devs[i], &desc);
-			if(desc.idVendor == pgm->usb_vid && desc.idProduct == pgm->usb_pid) {
-				numOfProgrammers++;
-
-				libusb_open(devs[i], &tempHandle);
-
-				libusb_get_string_descriptor_ascii(tempHandle, desc.iManufacturer, (unsigned char*)vendor, sizeof(vendor));
-				libusb_get_string_descriptor_ascii(tempHandle, desc.iProduct, (unsigned char*)device, sizeof(device));
-				libusb_get_string_descriptor_ascii(tempHandle, desc.iSerialNumber, (unsigned char*)serialno, sizeof(serialno));
-				serialno_to_hex(serialno, serialno_hex);
-
-				// print programmer data if no serial number specified
-				if(!pgm_serialno_specified) {
-					snprintf(szMessage, iCount, "Programmer %d: %s %s, Serial Number:%s\n", numOfProgrammers, vendor, device, serialno_hex);
-               strcat(szMessage, sz);
-				}
-				else
-				{
-					// otherwise check if it's the correct one
-					if(0==strcmp(serialno_hex, pgm_serialno)) {
-						pgm->dev_handle = tempHandle;
-						break;
-					}
-				}
-				libusb_close(tempHandle);
-			}
-
-		}
-		if(pgm_serialno_specified && i==cnt) {
-			snprintf(sz, sizeof(sz), "ERROR: No programmer with serial number %s found.\n", pgm_serialno);
-         strcat(szMessage, sz);
-			return(false);
-		}
-	}
-	else
+	for(int i = 0; i < cnt; i++)
 	{
-		pgm->dev_handle = libusb_open_device_with_vid_pid(ctx, pgm->usb_vid, pgm->usb_pid);
+
+      struct libusb_device_descriptor desc;
+
+		libusb_get_device_descriptor(devs[i], &desc);
+
+      snprintf(sz, sizeof(sz), "Device=%d vid=%d pid=%d\n", i, desc.idVendor, desc.idProduct);
+
+      strcat(szMessage, sz);
+
+		if(desc.idVendor == pgm->usb_vid && desc.idProduct == pgm->usb_pid)
+		{
+
+			numOfProgrammers++;
+
+			libusb_device_handle * handle = nullptr;
+
+         int iOpenResult = libusb_open(devs[i], &handle);
+
+         if(iOpenResult != 0)
+         {
+
+            if(iOpenResult == LIBUSB_ERROR_NO_MEM)
+            {
+
+               snprintf(sz, sizeof(sz), "No memory to open device\n");
+
+               strcat(szMessage, sz);
+
+            }
+            else if(iOpenResult == LIBUSB_ERROR_ACCESS)
+            {
+
+               snprintf(sz, sizeof(sz), "No permission to open device\n");
+
+               strcat(szMessage, sz);
+
+            }
+            else if(iOpenResult == LIBUSB_ERROR_ACCESS)
+            {
+
+               snprintf(sz, sizeof(sz), "No permission to open device\n");
+
+               strcat(szMessage, sz);
+
+            }
+            else if(iOpenResult == LIBUSB_ERROR_ACCESS)
+            {
+
+               snprintf(sz, sizeof(sz), "No permission to open device\n");
+
+               strcat(szMessage, sz);
+
+            }
+            else
+            {
+            }
+
+
+            LIBUSB_ERROR_NO_DEVICE
+
+            continue;
+             LIBUSB_ERROR_NO_DEVICE if the device has been disconnected and a LIBUSB_ERROR code on other errors.
+
+         }
+
+			libusb_get_string_descriptor_ascii(handle, desc.iManufacturer, (unsigned char*)vendor, sizeof(vendor));
+			libusb_get_string_descriptor_ascii(handle, desc.iProduct, (unsigned char*)device, sizeof(device));
+			libusb_get_string_descriptor_ascii(handle, desc.iSerialNumber, (unsigned char*)serialno, sizeof(serialno));
+
+			serialno_to_hex(serialno, serialno_hex);
+
+			// print programmer data if no serial number specified
+			if(!pgm_serialno_specified || !strcmp(serialno_hex, pgm_serialno))
+			{
+
+            snprintf(szMessage, iCount, "Programmer %d: %s %s, Serial Number:%s\n", i, vendor, device, serialno_hex);
+
+            strcat(szMessage, sz);
+
+            pgm->dev_handle = handle;
+
+            break;
+
+         }
+
+         libusb_close(handle);
+
+		}
+
 	}
-
-
-
 
 	pgm->ctx = ctx;
-	// assert(pgm->dev_handle);
 
 	libusb_free_device_list(devs, 1); //free the list, unref the devices in it
 
