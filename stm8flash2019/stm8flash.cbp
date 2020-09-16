@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="stm8flash" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Build>
+			<Target title="linux_basis">
+				<Option output="$(#time_dir)/x64/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="$(#time_dir)/x64/$(TARGET_NAME)/" />
+				<Option object_output="$(#time_dir)/intermediate/$(TARGET_NAME)/$(PROJECT_NAME)" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option host_application="../../../$(TIME_NAME)/x64/basis/quasar_science_update_utility" />
+				<Option run_host_application_in_terminal="0" />
+				<Compiler>
+					<Add option="-fPIC" />
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,-rpath=\\$$$ORIGIN" />
+					<Add option="-Wl,-z,defs" />
+					<Add option="-lusb" />
+					<Add option="-lusb-1.0" />
+				</Linker>
+			</Target>
+			<Target title="install">
+				<Option output="$(#time_dir)/x64/$(TARGET_NAME)/lib$(PROJECT_NAME).so" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="$(#time_dir)/x64/$(TARGET_NAME)/" />
+				<Option object_output="$(#time_dir)/intermediate/$(TARGET_NAME)/$(PROJECT_NAME)" />
+				<Option type="3" />
+				<Option compiler="gcc" />
+				<Option parameters=": app=app-core/hellomultiverse build_number=basis locale=_std schema=_std install" />
+				<Option host_application="../../../$(TIME_NAME)/x64/basis/app" />
+				<Option run_host_application_in_terminal="0" />
+				<Option createDefFile="1" />
+				<Option createStaticLib="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-D_DEBUG" />
+				</Compiler>
+			</Target>
+			<Target title="arm64_basis">
+				<Option output="$(#time_dir)/x64/$(TARGET_NAME)/$(PROJECT_NAME)" prefix_auto="0" extension_auto="0" />
+				<Option working_dir="$(#time_dir)/x64/$(TARGET_NAME)/" />
+				<Option object_output="$(#time_dir)/intermediate/$(TARGET_NAME)/$(PROJECT_NAME)" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option use_console_runner="0" />
+				<Option parameters="-V" />
+				<Option host_application="../../../$(TIME_NAME)/x64/basis/stm8flash" />
+				<Option run_host_application_in_terminal="1" />
+				<Compiler>
+					<Add option="-g" />
+					<Add option="-std=c++17" />
+					<Add option="-D_DEBUG" />
+				</Compiler>
+				<Linker>
+					<Add option="-Wl,-rpath=\\$$$ORIGIN" />
+					<Add option="-Wl,-z,defs" />
+					<Add option="-lusb-1.0" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-std=c++17" />
+			<Add option="-fPIC" />
+			<Add option="-fpermissive" />
+			<Add option="-fexceptions" />
+			<Add option="-fnon-call-exceptions" />
+			<Add option="-fno-pie" />
+			<Add option="-fno-stack-protector" />
+			<Add option="-Wno-pointer-arith" />
+			<Add option="-Wno-attributes" />
+			<Add option="-Winvalid-pch" />
+			<Add option="-Wno-conversion-null" />
+			<Add option="`pkg-config libusb-1.0 dbus-glib-1 gtk+-3.0 libnm --cflags`" />
+			<Add directory="../../../inc" />
+			<Add directory="../../../include" />
+			<Add directory="../../../app/include" />
+			<Add directory="../../../platform/include" />
+			<Add directory="." />
+			<Add directory=".." />
+			<Add directory="../.." />
+			<Add directory="../../.." />
+			<Add directory="../../../app" />
+			<Add directory="../../../app/appseed" />
+			<Add directory="../../../app/appseed/core" />
+			<Add directory="../../../app/appseed/base" />
+			<Add directory="../../../app/appseed/aura" />
+			<Add directory="../../../app/appseed/axis" />
+		</Compiler>
+		<Linker>
+			<Add directory="../../$(TIME_NAME)/x64/$(TARGET_NAME)" />
+		</Linker>
+		<Unit filename="byte_utils.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="byte_utils.h" />
+		<Unit filename="error.h" />
+		<Unit filename="espstlink.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="espstlink.h" />
+		<Unit filename="ihex.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="ihex.h" />
+		<Unit filename="libespstlink.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="libespstlink.h" />
+		<Unit filename="main.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="pgm.h" />
+		<Unit filename="srec.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="srec.h" />
+		<Unit filename="stlink.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stlink.h" />
+		<Unit filename="stlinkv2.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stlinkv2.h" />
+		<Unit filename="stm8.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="stm8.h" />
+		<Unit filename="try.h" />
+		<Unit filename="utils.h" />
+		<Extensions>
+			<DoxyBlocks>
+				<comment_style block="0" line="0" />
+				<doxyfile_project />
+				<doxyfile_build />
+				<doxyfile_warnings />
+				<doxyfile_output />
+				<doxyfile_dot />
+				<general />
+			</DoxyBlocks>
+			<debugger>
+				<remote_debugging>
+					<options conn_type="-1" additional_cmds="&#x0A;" additional_cmds_before="&#x0A;" skip_ld_path="1" />
+				</remote_debugging>
+			</debugger>
+			<code_completion />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -3,11 +3,15 @@
 #define TRY(times, statement) do { 		\
 	int c = (times);			\
 	while(c > 0) {				\
-		usleep(10000);			\
+		usleep(300000);			\
 		if((statement)) break;		\
 		c--;				\
 	}					\
 	if(!c) {				\
-		ERROR("Tries exceeded");	\
+		ERROR_COUNT("Tries exceeded", (times));	\
 	}					\
+   else if(c < times -1) \
+   { \
+      INFO_COUNT("Tries", times - c);	\
+   } \
 } while(0)

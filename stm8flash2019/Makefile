@@ -15,6 +15,14 @@ else
 	BASE_CFLAGS := -g -O0
 endif
 
+# Pass DEBUG=anything to build with DEBUG Macro defined
+ifneq (,$(strip $(DEBUG)))
+	BASE_CFLAGS := -DDEBUG
+endif
+
+
+
+
 # Pass LIBUSB_QUIET=anything to Make to silence debug output from libusb.
 ifneq (,$(strip $(LIBUSB_QUIET)))
 	BASE_CFLAGS += -DSTM8FLASH_LIBUSB_QUIET
@@ -45,10 +53,6 @@ endif
 # Respect user-supplied cflags, if any - just put ours in front.
 override CFLAGS := $(BASE_CFLAGS) $(LIBUSB_CFLAGS) $(CFLAGS)
 
-# Check if install DESTDIR is undefined
-ifndef DESTDIR
-	DESTDIR=/usr/local
-endif
 
 BIN 		=stm8flash
 OBJECTS 	=stlink.o stlinkv2.o espstlink.o main.o byte_utils.o ihex.o srec.o stm8.o libespstlink.o
@@ -58,7 +62,7 @@ OBJECTS 	=stlink.o stlinkv2.o espstlink.o main.o byte_utils.o ihex.o srec.o stm8
 
 $(BIN)$(BIN_SUFFIX): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) $(LIBS) -o $(BIN)$(BIN_SUFFIX)
-
+	
 all: $(BIN)$(BIN_SUFFIX)
 
 $(OBJECTS): $(wildcard *.h)
@@ -70,6 +74,6 @@ clean:
 	-rm -f $(OBJECTS) $(BIN)$(BIN_SUFFIX)
 
 install:
-	mkdir -p $(DESTDIR)/bin/
-	cp $(BIN)$(BIN_SUFFIX) $(DESTDIR)/bin/
+	mkdir -p $(DESTDIR)/usr/local/bin/
+	cp $(BIN)$(BIN_SUFFIX) $(DESTDIR)/usr/local/bin/
 

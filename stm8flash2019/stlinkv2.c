@@ -122,11 +122,7 @@ void stlink2_init_session(programmer_t *pgm) {
 	stlink2_cmd(pgm, 0xf408, 0);
 	TRY(8, stlink2_get_status(pgm) == 0);
 
-	// This is probably a bug: Should set the STALL bit (write 8 instead of
-	// A0) What is currently being done: DM_CSR2 (0x7f99): Reserved (0x80) |
-	// Software breakpoint control (0x20)
 	stlink2_write_and_read_byte(pgm, 0xa0, 0x7f99);
-
 	stlink2_cmd(pgm, 0xf40c, 0);
 	msg_recv_int8(pgm); // 0x08 (or 0x0a if used stlink2_write_byte() instead)
 }
@@ -213,11 +209,15 @@ void stlink2_wait_until_transfer_completes(programmer_t *pgm, const stm8_device_
 
 int stlink2_swim_write_range(programmer_t *pgm, const stm8_device_t *device, unsigned char *buffer, unsigned int start, unsigned int length, const memtype_t memtype) {
 	stlink2_init_session(pgm);
+   
+   INFO("stlink2_swim_write_range:init_session");
 
 	stlink2_write_byte(pgm, 0x00, device->regs.CLK_CKDIVR);
     if(memtype == FLASH || memtype == EEPROM || memtype == OPT) {
         stlink2_write_and_read_byte(pgm, 0x00, device->regs.FLASH_IAPSR);
     }
+
+   INFO("stlink2_swim_write_range:10%");
 
     // Unlock MASS
     if(memtype == FLASH) {
@@ -232,6 +232,11 @@ int stlink2_swim_write_range(programmer_t *pgm, const stm8_device_t *device, uns
     if(memtype == FLASH || memtype == EEPROM || memtype == OPT) {
         stlink2_write_and_read_byte(pgm, 0x56, device->regs.FLASH_IAPSR); // mov 0x56, FLASH_IAPSR
     }
+    
+   INFO("stlink2_swim_write_range:20%");
+
+
+   
 
 	int i;
 	int BLOCK_SIZE = device->flash_block_size;
@@ -242,6 +247,8 @@ int stlink2_swim_write_range(programmer_t *pgm, const stm8_device_t *device, uns
             if(device->regs.FLASH_NCR2 != 0) { // Device have FLASH_NCR2 register
                 stlink2_write_byte(pgm, 0xFE, device->regs.FLASH_NCR2);
             }
+               printf("\n%d  w", i);
+
         } else if (memtype == OPT){
             // option programming mode
             stlink2_write_byte(pgm, 0x80, device->regs.FLASH_CR2);
@@ -262,6 +269,9 @@ int stlink2_swim_write_range(programmer_t *pgm, const stm8_device_t *device, uns
                 TRY(8, HI(stlink2_get_status(pgm)) == 1);
             }
         } else {
+           
+           printf(" .1");
+           
             // page-based writing
             // The first 8 packet bytes are getting transmitted
             // with the same USB bulk transfer as the command itself
@@ -270,24 +280,39 @@ int stlink2_swim_write_range(programmer_t *pgm, const stm8_device_t *device, uns
             format_int(&(cmd_buf[5]), start + i, 3, MP_BIG_ENDIAN);
             memcpy(&(cmd_buf[8]), &(buffer[i]), 8);
             msg_send(pgm, cmd_buf, sizeof(cmd_buf));
+            
+            printf(" .2");
 
             // Transmitting the rest
             msg_send(pgm, &(buffer[i + 8]), BLOCK_SIZE - 8);
 
+
+            printf(" .3");
+
             // Waiting for the transfer to process
             TRY(128, HI(stlink2_get_status(pgm)) == BLOCK_SIZE);
+            
+
         }
 
         if(memtype == FLASH || memtype == EEPROM || memtype == OPT) {
             stlink2_wait_until_transfer_completes(pgm, device);
         }
 	}
+   
+   printf("\n");
+   
+   INFO("stlink2_swim_write_range:95%");
     if(memtype == FLASH || memtype == EEPROM || memtype == OPT) {
         stlink2_write_and_read_byte(pgm, 0x56, device->regs.FLASH_IAPSR); // mov 0x56, FLASH_IAPSR
     }
+    INFO("stlink2_swim_write_range:97%");
 	stlink2_write_byte(pgm, 0x00, 0x7f80);
+   INFO("stlink2_swim_write_range:98%");
 	stlink2_write_byte(pgm, 0xb6, 0x7f80);
+   INFO("stlink2_swim_write_range:99%");
 	stlink2_finish_session(pgm);
+   INFO("stlink2_swim_write_range:Finished writing");
 	return(length);
 }
 
