@@ -133,7 +133,7 @@ void print_help_and_exit(const char *name, bool err) {
 
 void print_version_and_exit( bool err) {
 	FILE *stream = err ? stderr : stdout;
-	fprintf(stream, "%s-%s\n%s",VERSION_RELASE_DATE, VERSION, VERSION_NOTES );
+	fprintf(stream, "%s-%s-%s\n%s",VERSION_RELASE_DATE, VERSION, "ca2-2020-09-17", VERSION_NOTES );
 	exit(-err);
 }
 
@@ -507,7 +507,7 @@ int main(int argc, char **argv) {
 			fwrite(buf, 1, bytes_count, f);
 		}
 		fclose(f);
-		fprintf(stderr, "OK\n");
+		fprintf(stderr, "\nOK\n");
 		fprintf(stderr, "Bytes received: %d\n", bytes_count);
 	} else if (action == VERIFY) {
 		fprintf(stderr, "Verifing %d bytes at 0x%x... ", bytes_count, start);
@@ -549,7 +549,7 @@ int main(int argc, char **argv) {
 		fclose(f);
 
 		if(memcmp(buf, buf2, bytes_to_verify) == 0) {
-			fprintf(stderr, "OK\n");
+			fprintf(stderr, "\nOK\n");
 			fprintf(stderr, "Bytes verified: %d\n", bytes_to_verify);
 		} else {
 			fprintf(stderr, "FAILED\n");
@@ -593,7 +593,7 @@ int main(int argc, char **argv) {
 			// Restarting core (if applicable)
 			pgm->reset(pgm);
 		}
-		fprintf(stderr, "OK\n");
+		fprintf(stderr, "\nOK\n");
 		fprintf(stderr, "Bytes written: %d\n", sent);
 		fclose(f);
 	} else if (action == UNLOCK) {
