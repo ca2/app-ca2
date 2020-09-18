@@ -3,7 +3,7 @@
 #define TRY(times, statement) do { 		\
 	int c = (times);			\
 	while(c > 0) {				\
-		usleep(10000);			\
+		usleep(3000);			\
 		if((statement)) break;		\
 		c--;				\
 	}					\
