@@ -133,7 +133,7 @@ void print_help_and_exit(const char *name, bool err) {
 
 void print_version_and_exit( bool err) {
 	FILE *stream = err ? stderr : stdout;
-	fprintf(stream, "%s-%s-%s\n%s",VERSION_RELASE_DATE, VERSION, "ca2-2020-09-18-08-16", VERSION_NOTES );
+	fprintf(stream, "%s-%s-%s\n%s",VERSION_RELASE_DATE, VERSION, "ca2-2020-09-21-17-40", VERSION_NOTES );
 	exit(-err);
 }
 
