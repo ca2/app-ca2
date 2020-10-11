@@ -878,7 +878,7 @@ namespace user
 
                   pgraphics->SelectObject(fonts.GetCaptionFont());
 
-                  pgraphics->draw_text(wstrWindowText, m_rectWindowText, DT_LEFT | DT_VCENTER | DT_NOPREFIX);
+                  pgraphics->draw_text(wstrWindowText, m_rectWindowText, e_align_left_center, e_draw_text_no_prefix);
 
                }
 

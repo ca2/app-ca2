@@ -275,7 +275,7 @@ namespace gauge_prober
          pgraphics->set_smooth_mode(::draw2d::smooth_mode_none);
          pgraphics->MoveTo((int)m_rect.left-1, (int) (m_rect.bottom - m_rect.height() * (m_dMax - dMin) / dSpan));
          pgraphics->LineTo((int)m_rect.left - 20, (int)(m_rect.bottom - m_rect.height() * (m_dMax - dMin) / dSpan));
-         pgraphics->draw_text(m_strMax, r1, DT_RIGHT | DT_BOTTOM);
+         pgraphics->draw_text(m_strMax, r1, e_align_bottom_right);
 
          rect r2;
 
@@ -287,7 +287,7 @@ namespace gauge_prober
          pgraphics->set_smooth_mode(::draw2d::smooth_mode_none);
          pgraphics->MoveTo((int) m_rect.left-1, (int)(m_rect.bottom - m_rect.height() * (m_dMin - dMin) / dSpan));
          pgraphics->LineTo((int)m_rect.left - 20, (int) (m_rect.bottom - m_rect.height() * (m_dMin - dMin) / dSpan));
-         pgraphics->draw_text(m_strMin, r2, DT_RIGHT | DT_TOP);
+         pgraphics->draw_text(m_strMin, r2, e_align_top_right);
 
       }
       else

@@ -760,7 +760,7 @@ namespace wndfrm_bockengineering
       if(straTitle.get_count() <= 1)
       {
 
-         pgraphics->_DrawText(pane.get_title(), rectText,DT_LEFT | DT_BOTTOM | DT_NOPREFIX);
+         pgraphics->_DrawText(pane.get_title(), rectText, e_align_bottom_left, e_draw_text_no_prefix);
 
       }
       else
@@ -773,7 +773,7 @@ namespace wndfrm_bockengineering
             string str = straTitle[i];
             size s = pane.m_sizeaText[i];
             rectText.right =rectText.left + s.cx;
-            pgraphics->_DrawText(str,rectText,DT_LEFT | DT_BOTTOM | DT_NOPREFIX);
+            pgraphics->_DrawText(str,rectText, e_align_bottom_left, e_draw_text_no_prefix);
             rectText.left += s.cx;
             if(i < straTitle.get_upper_bound())
             {
@@ -794,7 +794,7 @@ namespace wndfrm_bockengineering
                }
                pgraphics->set_font(ptab->get_data()->m_fontBigBold);
                pgraphics->set_alpha_mode(emode);
-               pgraphics->_DrawText(MAGIC_PALACE_TAB_TEXT,rectText,DT_CENTER | DT_VCENTER | DT_NOPREFIX);
+               pgraphics->_DrawText(MAGIC_PALACE_TAB_TEXT,rectText, e_align_center, e_draw_text_no_prefix);
                rectText.left += sSep.cx;
                pgraphics->selectFont(font);
                pgraphics->SelectObject(brushText);
@@ -1388,7 +1388,7 @@ namespace wndfrm_bockengineering
          if (ptoolbar->_001GetElementRect(iItem, rectText, eelementText) && rectText.right > 0)
          {
 
-            pgraphics->_DrawText(item.m_str, item.m_str.get_length(), rectText, DT_BOTTOM | DT_LEFT | DT_NOPREFIX);
+            pgraphics->_DrawText(item.m_str, item.m_str.get_length(), rectText, e_align_bottom_left, e_draw_text_no_prefix);
 
          }
 
@@ -1700,7 +1700,7 @@ namespace wndfrm_bockengineering
          if (ptoolbar->_001GetElementRect(iItem, rectText, eelementText) && rectText.right > 0)
          {
 
-            pgraphics->_DrawText(item.m_str, item.m_str.get_length(), rectText, DT_BOTTOM | DT_LEFT | DT_NOPREFIX);
+            pgraphics->_DrawText(item.m_str, item.m_str.get_length(), rectText, e_align_bottom_left, e_draw_text_no_prefix);
 
          }
 

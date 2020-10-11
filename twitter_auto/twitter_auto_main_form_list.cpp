@@ -1055,25 +1055,45 @@ namespace twitter_auto
    }
 
 
-   i32 main_form_list::_001GetDrawTextFlags(::user::list::EView eview)
+   ::e_align main_form_list::get_draw_text_align(::user::list::EView eview)
    {
 
       if (m_eview == impact_icon)
       {
 
-         return DT_TOP | DT_CENTER | DT_END_ELLIPSIS | DT_WORDBREAK | DT_NOPREFIX;
+         return e_align_top_center;
 
       }
       else
       {
 
-         return DT_VCENTER | DT_LEFT | DT_END_ELLIPSIS | DT_SINGLELINE | DT_NOPREFIX;
+         return e_align_left_center;
 
       }
 
    }
 
-   void main_form_list::_001GetItemText(::user::mesh_item * pitem)
+
+   ::e_draw_text main_form_list::get_draw_text_flags(::user::list::EView eview)
+   {
+
+      if (m_eview == impact_icon)
+      {
+
+         return e_draw_text_end_ellipsis | e_draw_text_no_prefix | e_draw_text_word_break;
+
+      }
+      else
+      {
+
+         return e_draw_text_end_ellipsis | e_draw_text_no_prefix | e_draw_text_single_line;
+
+      }
+
+   }
+
+
+      void main_form_list::_001GetItemText(::user::mesh_item * pitem)
    {
 
       if (pitem->m_iItem >= m_ptaska->m_stra.get_count())
