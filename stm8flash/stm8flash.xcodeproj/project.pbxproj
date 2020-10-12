@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9A82C1372533FE4D008CBE73 /* libusb-1.0.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A82C1362533FE4D008CBE73 /* libusb-1.0.0.dylib */; };
 		9AD408D82527D56D0027B23E /* srec.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AD408BA2527D56D0027B23E /* srec.c */; };
 		9AD408D92527D56D0027B23E /* espstlink.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AD408BE2527D56D0027B23E /* espstlink.c */; };
 		9AD408DB2527D56D0027B23E /* stm8.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AD408C12527D56D0027B23E /* stm8.c */; };
@@ -16,22 +17,10 @@
 		9AD408DF2527D56D0027B23E /* byte_utils.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AD408CC2527D56D0027B23E /* byte_utils.c */; };
 		9AD408E02527D56D0027B23E /* libespstlink.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AD408D22527D56D0027B23E /* libespstlink.c */; };
 		9AD408E12527D56D0027B23E /* stlinkv2.c in Sources */ = {isa = PBXBuildFile; fileRef = 9AD408D52527D56D0027B23E /* stlinkv2.c */; };
-		9AD408E82527DA9E0027B23E /* libusb-1.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AD408E72527DA9E0027B23E /* libusb-1.0.a */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		9AD408A42527D44F0027B23E /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 1;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		9A82C1362533FE4D008CBE73 /* libusb-1.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libusb-1.0.0.dylib"; path = "../../../archive/storage-macos/library/Debug/libusb-1.0.0.dylib"; sourceTree = "<group>"; };
 		9AD408A62527D44F0027B23E /* stm8flash */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = stm8flash; sourceTree = BUILT_PRODUCTS_DIR; };
 		9AD408B92527D56D0027B23E /* byte_utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = byte_utils.h; sourceTree = "<group>"; };
 		9AD408BA2527D56D0027B23E /* srec.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = srec.c; sourceTree = "<group>"; };
@@ -54,7 +43,6 @@
 		9AD408D52527D56D0027B23E /* stlinkv2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stlinkv2.c; sourceTree = "<group>"; };
 		9AD408D62527D56D0027B23E /* try.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = try.h; sourceTree = "<group>"; };
 		9AD408D72527D56D0027B23E /* ihex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ihex.h; sourceTree = "<group>"; };
-		9AD408E72527DA9E0027B23E /* libusb-1.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libusb-1.0.a"; path = "../../../../../../usr/local/Cellar/libusb/1.0.23/lib/libusb-1.0.a"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9AD408E82527DA9E0027B23E /* libusb-1.0.a in Frameworks */,
+				9A82C1372533FE4D008CBE73 /* libusb-1.0.0.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,7 +105,7 @@
 		9AD408E62527DA9E0027B23E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AD408E72527DA9E0027B23E /* libusb-1.0.a */,
+				9A82C1362533FE4D008CBE73 /* libusb-1.0.0.dylib */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -131,7 +119,7 @@
 			buildPhases = (
 				9AD408A22527D44F0027B23E /* Sources */,
 				9AD408A32527D44F0027B23E /* Frameworks */,
-				9AD408A42527D44F0027B23E /* CopyFiles */,
+				9A82C1382533FE63008CBE73 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -173,6 +161,26 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		9A82C1382533FE63008CBE73 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$HOME/__archive/archive/tool-macos/bin/fix_rpath\" \"$TARGET_BUILD_DIR\" \"$EXECUTABLE_PREFIX$TARGET_NAME\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9AD408A22527D44F0027B23E /* Sources */ = {
@@ -244,11 +252,37 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(HOME)/__archive/archive/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
+					"$(HOME)/__archive/archive/storage-$(PLATFORM_MODIFIER)/third/library/$(CONFIGURATION)",
+					"$(WorkspaceDir)/time/$(PLATFORM_MODIFIER)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(HOME)/__archive/archive/third-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/third/include",
+					"$(WorkspaceDir)/app/_include",
+					"$(HOME)/__archive/archive/third-$(PLATFORM_MODIFIER)/third/include/",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)",
+					"$(WorkspaceDir)/include",
+					"$(WorkspaceDir)/platform-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/platform-$(PLATFORM_MODIFIER)/_include",
+					"$(WorkspaceDir)/app/_include",
+					"$(WorkspaceDir)/third/include",
+					"$(WorkspaceDir)/app",
+					.,
+					"$(PROJECT_DIR)",
+					"$(HOME)/__archive/sensitive/sensitive/include",
+				);
+				USE_HEADERMAP = NO;
 			};
 			name = Debug;
 		};
@@ -296,10 +330,36 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(HOME)/__archive/archive/storage-$(PLATFORM_MODIFIER)/library/$(CONFIGURATION)",
+					"$(HOME)/__archive/archive/storage-$(PLATFORM_MODIFIER)/third/library/$(CONFIGURATION)",
+					"$(WorkspaceDir)/time/$(PLATFORM_MODIFIER)",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
+				SYSTEM_HEADER_SEARCH_PATHS = (
+					"$(HOME)/__archive/archive/third-$(PLATFORM_MODIFIER)/include",
+					"$(WorkspaceDir)/third/include",
+					"$(WorkspaceDir)/app/_include",
+					"$(HOME)/__archive/archive/third-$(PLATFORM_MODIFIER)/third/include/",
+				);
+				USER_HEADER_SEARCH_PATHS = (
+					"$(WorkspaceDir)",
+					"$(WorkspaceDir)/include",
+					"$(WorkspaceDir)/platform-$(PLATFORM_MODIFIER)",
+					"$(WorkspaceDir)/platform-$(PLATFORM_MODIFIER)/_include",
+					"$(WorkspaceDir)/app/_include",
+					"$(WorkspaceDir)/third/include",
+					"$(WorkspaceDir)/app",
+					.,
+					"$(PROJECT_DIR)",
+					"$(HOME)/__archive/sensitive/sensitive/include",
+				);
+				USE_HEADERMAP = NO;
 			};
 			name = Release;
 		};
@@ -309,9 +369,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/libusb/1.0.23/lib;
+				PLATFORM_MODIFIER = macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/libusb/1.0.23/include;
 			};
 			name = Debug;
 		};
@@ -321,9 +380,8 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = L8N5V6TZE5;
 				ENABLE_HARDENED_RUNTIME = YES;
-				LIBRARY_SEARCH_PATHS = /usr/local/Cellar/libusb/1.0.23/lib;
+				PLATFORM_MODIFIER = macos;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SYSTEM_HEADER_SEARCH_PATHS = /usr/local/Cellar/libusb/1.0.23/include;
 			};
 			name = Release;
 		};
